@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/hw1/nostyle.html"
+      "destination": "/hw1/index.html"
     }
   ]
 }
