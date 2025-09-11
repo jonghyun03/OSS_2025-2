@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style>
+      .border_example {
+        height: 100px;
+        width: 100px;
+        border: 1px solid #3d3d3d;
+        padding: 30px;
+        background-color: blue;
+        border-radius: 25%;
+        text-align: center;
+
+        /* 내맘대루 */
+        color: white;
+        font-weight: 700;
+      }
+
+      img {
+        width: 10%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="border_example">보더 관련</div>
+    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQRbsrc7KmKHG6T_ksL4r4TQeSyti1VjkoQKPj0-4mSaL3rymO6yq5_LFxFgWxnrXeKUUQV898zknQXs76t1XCUnATWDbSlDqN-PapUdruXQ"/>
+
+    <table style="width: 100%; background-color: aqua;">
+      <tr>
+        <td width="25%">1</td>
+        <td width="25%">2</td>
+        <td width="25%">3</td>
+        <td width="25%">4</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="border: 1px solid red;">1,2</td>
+        <!-- <td></td> -->
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td rowspan="2">세로로 합치기</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+    </table>
+  </body>
+</html>
