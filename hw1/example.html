@@ -1,0 +1,258 @@
+<html>
+<head></head>
+
+<body>
+  <div class="container wrapper">
+    <div id="top">
+      <h1>Welcome to 서종현's Homepage (22200370)</h1>
+      <p>Use the menu to select different Stylesheets</p>
+    </div>
+
+    <div class="wrapper">
+      <div id="menubar">
+        <ul id="menulist">
+          <!-- 페이지 이동 막음 -->
+          <li class="menuitem" onclick="return false;">Stylesheet 1</li>
+          <li class="menuitem" onclick="return false;">Stylesheet 2</li>
+          <li class="menuitem" onclick="return false;">No Stylesheet</li>
+        </ul>
+      </div>
+
+      <div id="main">
+        <h1>Bootstrap Examples (Reframed)</h1>
+        <p>
+          This page mirrors the structure of Bootstrap’s <span class="nolink">Examples</span> page,
+          but all links and navigations are disabled for demo purposes.
+        </p>
+
+        <h2>Starters</h2>
+        <ul class="list">
+          <li>
+            <strong>CDN starter</strong><br>
+            <span class="desc">Instantly include Bootstrap's compiled CSS and JavaScript via CDN.</span>
+          </li>
+          <li>
+            <strong>Sass &amp; JS</strong><br>
+            <span class="desc">Use npm to import and compile Bootstrap's Sass and bundled JS.</span>
+          </li>
+          <li>
+            <strong>Sass &amp; ESM JS</strong><br>
+            <span class="desc">Compile Sass and use ESM shim for source JavaScript.</span>
+          </li>
+          <li>
+            <strong>Bootstrap color modes</strong><br>
+            <span class="desc">Use color modes with Sass + Stylelint.</span>
+          </li>
+          <li>
+            <strong>Bootstrap Icons</strong><br>
+            <span class="desc">PurgeCSS + Icons web font with Sass.</span>
+          </li>
+          <li>
+            <strong>Parcel / React / Vite / Vue / Webpack</strong><br>
+            <span class="desc">Starter setups bundling Sass & JS with popular toolchains.</span>
+          </li>
+        </ul>
+
+        <h2>Snippets</h2>
+        <ul class="cards">
+          <li><strong>Headers</strong> — Branding, navigation, search.</li>
+          <li><strong>Heroes</strong> — Home hero sections with CTAs.</li>
+          <li><strong>Features</strong> — Explain features/benefits.</li>
+          <li><strong>Sidebars</strong> — Offcanvas / multi-column nav.</li>
+          <li><strong>Footers</strong> — Strong page endings.</li>
+          <li><strong>Dropdowns</strong> — Filters, icons, custom styles.</li>
+          <li><strong>List groups</strong> — Utilities + custom styles.</li>
+          <li><strong>Modals</strong> — Tours, dialogs, more.</li>
+          <li><strong>Badges</strong> — Custom inner HTML & looks.</li>
+          <li><strong>Breadcrumbs</strong> — Icons & stepper patterns.</li>
+          <li><strong>Buttons</strong> — Utility-driven custom buttons.</li>
+          <li><strong>Jumbotrons</strong> — Modernized v4 component.</li>
+        </ul>
+
+        <h2>Custom Components</h2>
+        <ul class="cards">
+          <li><strong>Album</strong> — One-page gallery/portfolio.</li>
+          <li><strong>Pricing</strong> — Cards + custom header/footer.</li>
+          <li><strong>Checkout</strong> — Forms + validation features.</li>
+          <li><strong>Product</strong> — Grid + images for marketing.</li>
+          <li><strong>Cover</strong> — Simple, beautiful home page.</li>
+          <li><strong>Carousel</strong> — Navbar + carousel combo.</li>
+          <li><strong>Blog</strong> — Magazine-style layout.</li>
+          <li><strong>Dashboard</strong> — Fixed sidebar + navbar.</li>
+          <li><strong>Sign-in</strong> — Simple custom form layout.</li>
+          <li><strong>Sticky footer</strong> — Footer sticks on short pages.</li>
+          <li><strong>Sticky footer navbar</strong> — Footer + fixed top navbar.</li>
+          <li><strong>Jumbotron</strong> — Utilities-based remake.</li>
+        </ul>
+
+        <h2>Framework</h2>
+        <ul class="list">
+          <li><strong>Starter template</strong> — Just compiled CSS & JS.</li>
+          <li><strong>Grid</strong> — All tiers, nesting, more.</li>
+          <li><strong>Cheatsheet</strong> — Kitchen sink of components.</li>
+        </ul>
+
+        <h2>Navbars</h2>
+        <ul class="list">
+          <li><strong>Navbars</strong> — All container & responsive options.</li>
+          <li><strong>Navbars offcanvas</strong> — Offcanvas variant.</li>
+          <li><strong>Navbar static</strong> — Static top + content.</li>
+          <li><strong>Navbar fixed</strong> — Fixed top + content.</li>
+          <li><strong>Navbar bottom</strong> — Bottom navbar.</li>
+          <li><strong>Offcanvas navbar</strong> — Sliding menu (custom).</li>
+        </ul>
+
+        <h2>RTL</h2>
+        <p><em>Experimental.</em> Examples include Album RTL, Checkout RTL, Carousel RTL, Blog RTL, Dashboard RTL, Cheatsheet RTL.</p>
+
+        <h2>Integrations</h2>
+        <ul class="list">
+          <li><strong>Masonry</strong> — Bootstrap grid + Masonry layout.</li>
+        </ul>
+      </div>
+
+      <div id="sidebar">
+        <h3>Side-Bar</h3>
+        <p>
+          All links are disabled in this demo.<br>
+          Use this page to compare layouts without navigation.
+        </p>
+        <ul class="bulletless">
+          <li>Current version: <span class="tag">v5.3.x</span></li>
+          <li>License: <span class="tag">MIT</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="bottom">
+      This page is a simplified, navigation-locked adaptation of Bootstrap’s Examples.
+      It preserves your original layout (Top / Menubar / Main / Sidebar / Bottom) and base styles
+      for consistent comparison across stylesheets.
+    </div>
+  </div>
+
+  <script>
+    // 전역 링크 비활성화
+    document.addEventListener('click', function (e) {
+      const a = e.target.closest('a');
+      if (a) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
+</body>
+
+<style>
+  body {
+    font: 100% Lucida Sans, Verdana;
+    margin: 20px;
+    line-height: 26px;
+  }
+
+  .container { min-width: 900px; }
+
+  .wrapper {
+    position: relative;
+    overflow: auto;
+  }
+
+  #top, #sidebar, #bottom, .menuitem {
+    border-radius: 4px;
+    margin: 4px;
+  }
+
+  #top {
+    background-color: #04AA6D;
+    color: #ffffff;
+    padding: 15px;
+  }
+
+  #menubar {
+    width: 200px;
+    float: left;
+  }
+
+  #main {
+    padding: 10px;
+    margin: 0 210px;
+  }
+
+  #sidebar {
+    background-color: #32a4e7;
+    color: #ffffff;
+    padding: 10px;
+    width: 180px;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  #bottom {
+    border: 1px solid #d4d4d4;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 70%;
+    line-height: 14px;
+  }
+
+  #top h1, #top p, #menulist {
+    margin: 0;
+    padding: 0;
+  }
+
+  .menuitem {
+    background-color: #f1f1f1;
+    border: 1px solid #d4d4d4;
+    list-style-type: none;
+    padding: 2px;
+    cursor: not-allowed; /* 클릭 비활성 표현 */
+    user-select: none;
+  }
+
+  .menuitem:hover { background-color: #ffffff; }
+
+  .menuitem:first-child {
+    background-color: #04AA6D;
+    color: white;
+    font-weight: bold;
+  }
+
+  a { color: #000000; text-decoration: underline; pointer-events: none; }
+  a:hover { text-decoration: none; }
+
+  /* 본문 리스트/카드 스타일 (간단) */
+  .list { padding-left: 18px; }
+  .list li { margin-bottom: 6px; }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 8px 16px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .cards li {
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    padding: 8px 10px;
+    background: #fff;
+  }
+
+  .desc { color: #444; font-size: 90%; }
+  .bulletless { list-style: none; padding-left: 0; }
+  .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 85%;
+  }
+
+  .nolink { text-decoration: none; cursor: default; }
+</style>
+
+</html>
