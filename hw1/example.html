@@ -1,258 +1,243 @@
-<html>
-<head></head>
+<html lang="en">
+
+<head>
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: #0000001a;
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em #0000001a,
+        inset 0 .125em .5em #00000026;
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .bi {
+      width: 1em;
+      height: 1em;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
+</head>
 
 <body>
-  <div class="container wrapper">
-    <div id="top">
-      <h1>Welcome to 서종현's Homepage (22200370)</h1>
-      <p>Use the menu to select different Stylesheets</p>
-    </div>
-
-    <div class="wrapper">
-      <div id="menubar">
-        <ul id="menulist">
-          <!-- 페이지 이동 막음 -->
-          <li class="menuitem" onclick="return false;">Stylesheet 1</li>
-          <li class="menuitem" onclick="return false;">Stylesheet 2</li>
-          <li class="menuitem" onclick="return false;">No Stylesheet</li>
-        </ul>
-      </div>
-
-      <div id="main">
-        <h1>Bootstrap Examples (Reframed)</h1>
-        <p>
-          This page mirrors the structure of Bootstrap’s <span class="nolink">Examples</span> page,
-          but all links and navigations are disabled for demo purposes.
-        </p>
-
-        <h2>Starters</h2>
-        <ul class="list">
-          <li>
-            <strong>CDN starter</strong><br>
-            <span class="desc">Instantly include Bootstrap's compiled CSS and JavaScript via CDN.</span>
-          </li>
-          <li>
-            <strong>Sass &amp; JS</strong><br>
-            <span class="desc">Use npm to import and compile Bootstrap's Sass and bundled JS.</span>
-          </li>
-          <li>
-            <strong>Sass &amp; ESM JS</strong><br>
-            <span class="desc">Compile Sass and use ESM shim for source JavaScript.</span>
-          </li>
-          <li>
-            <strong>Bootstrap color modes</strong><br>
-            <span class="desc">Use color modes with Sass + Stylelint.</span>
-          </li>
-          <li>
-            <strong>Bootstrap Icons</strong><br>
-            <span class="desc">PurgeCSS + Icons web font with Sass.</span>
-          </li>
-          <li>
-            <strong>Parcel / React / Vite / Vue / Webpack</strong><br>
-            <span class="desc">Starter setups bundling Sass & JS with popular toolchains.</span>
-          </li>
-        </ul>
-
-        <h2>Snippets</h2>
-        <ul class="cards">
-          <li><strong>Headers</strong> — Branding, navigation, search.</li>
-          <li><strong>Heroes</strong> — Home hero sections with CTAs.</li>
-          <li><strong>Features</strong> — Explain features/benefits.</li>
-          <li><strong>Sidebars</strong> — Offcanvas / multi-column nav.</li>
-          <li><strong>Footers</strong> — Strong page endings.</li>
-          <li><strong>Dropdowns</strong> — Filters, icons, custom styles.</li>
-          <li><strong>List groups</strong> — Utilities + custom styles.</li>
-          <li><strong>Modals</strong> — Tours, dialogs, more.</li>
-          <li><strong>Badges</strong> — Custom inner HTML & looks.</li>
-          <li><strong>Breadcrumbs</strong> — Icons & stepper patterns.</li>
-          <li><strong>Buttons</strong> — Utility-driven custom buttons.</li>
-          <li><strong>Jumbotrons</strong> — Modernized v4 component.</li>
-        </ul>
-
-        <h2>Custom Components</h2>
-        <ul class="cards">
-          <li><strong>Album</strong> — One-page gallery/portfolio.</li>
-          <li><strong>Pricing</strong> — Cards + custom header/footer.</li>
-          <li><strong>Checkout</strong> — Forms + validation features.</li>
-          <li><strong>Product</strong> — Grid + images for marketing.</li>
-          <li><strong>Cover</strong> — Simple, beautiful home page.</li>
-          <li><strong>Carousel</strong> — Navbar + carousel combo.</li>
-          <li><strong>Blog</strong> — Magazine-style layout.</li>
-          <li><strong>Dashboard</strong> — Fixed sidebar + navbar.</li>
-          <li><strong>Sign-in</strong> — Simple custom form layout.</li>
-          <li><strong>Sticky footer</strong> — Footer sticks on short pages.</li>
-          <li><strong>Sticky footer navbar</strong> — Footer + fixed top navbar.</li>
-          <li><strong>Jumbotron</strong> — Utilities-based remake.</li>
-        </ul>
-
-        <h2>Framework</h2>
-        <ul class="list">
-          <li><strong>Starter template</strong> — Just compiled CSS & JS.</li>
-          <li><strong>Grid</strong> — All tiers, nesting, more.</li>
-          <li><strong>Cheatsheet</strong> — Kitchen sink of components.</li>
-        </ul>
-
-        <h2>Navbars</h2>
-        <ul class="list">
-          <li><strong>Navbars</strong> — All container & responsive options.</li>
-          <li><strong>Navbars offcanvas</strong> — Offcanvas variant.</li>
-          <li><strong>Navbar static</strong> — Static top + content.</li>
-          <li><strong>Navbar fixed</strong> — Fixed top + content.</li>
-          <li><strong>Navbar bottom</strong> — Bottom navbar.</li>
-          <li><strong>Offcanvas navbar</strong> — Sliding menu (custom).</li>
-        </ul>
-
-        <h2>RTL</h2>
-        <p><em>Experimental.</em> Examples include Album RTL, Checkout RTL, Carousel RTL, Blog RTL, Dashboard RTL, Cheatsheet RTL.</p>
-
-        <h2>Integrations</h2>
-        <ul class="list">
-          <li><strong>Masonry</strong> — Bootstrap grid + Masonry layout.</li>
-        </ul>
-      </div>
-
-      <div id="sidebar">
-        <h3>Side-Bar</h3>
-        <p>
-          All links are disabled in this demo.<br>
-          Use this page to compare layouts without navigation.
-        </p>
-        <ul class="bulletless">
-          <li>Current version: <span class="tag">v5.3.x</span></li>
-          <li>License: <span class="tag">MIT</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="bottom">
-      This page is a simplified, navigation-locked adaptation of Bootstrap’s Examples.
-      It preserves your original layout (Top / Menubar / Main / Sidebar / Bottom) and base styles
-      for consistent comparison across stylesheets.
-    </div>
+  <!-- Theme toggle -->
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" aria-hidden="true">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" aria-hidden="true">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" aria-hidden="true">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" aria-hidden="true">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" aria-hidden="true">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" aria-hidden="true">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
   </div>
 
-  <script>
-    // 전역 링크 비활성화
-    document.addEventListener('click', function (e) {
-      const a = e.target.closest('a');
-      if (a) {
-        e.preventDefault();
-        return false;
-      }
-    });
-  </script>
+  <!-- Header -->
+  <header data-bs-theme="dark">
+    <div class="collapse text-bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4>About</h4>
+            <p class="text-body-secondary">
+              Add some information about the album below, the author, or any other background context.
+            </p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4>Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on X</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="me-2" viewBox="0 0 24 24">
+            <path d="M23 19a2 2..."></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <strong>Album</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Album example</h1>
+          <p class="lead text-body-secondary">
+            Something short and leading about the collection below...
+          </p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Main call to action</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <!-- 반복되는 카드 -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img">
+                <rect width="100%" height="100%" fill="#55595c" />
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">This is a wider card...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-sm btn-outline-secondary">View</button>
+                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-body-secondary">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ... 다른 카드도 동일 구조 반복 -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-body-secondary py-5">
+    <div class="container">
+      <p class="float-end mb-1"><a href="#">Back to top</a></p>
+      <p class="mb-1">Album example is &copy; Bootstrap...</p>
+      <p class="mb-0">
+        New to Bootstrap? <a href="/">Visit the homepage</a>
+        or read our <a href="/docs/5.3/getting-started/introduction">getting started guide</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"></script>
 </body>
-
-<style>
-  body {
-    font: 100% Lucida Sans, Verdana;
-    margin: 20px;
-    line-height: 26px;
-  }
-
-  .container { min-width: 900px; }
-
-  .wrapper {
-    position: relative;
-    overflow: auto;
-  }
-
-  #top, #sidebar, #bottom, .menuitem {
-    border-radius: 4px;
-    margin: 4px;
-  }
-
-  #top {
-    background-color: #04AA6D;
-    color: #ffffff;
-    padding: 15px;
-  }
-
-  #menubar {
-    width: 200px;
-    float: left;
-  }
-
-  #main {
-    padding: 10px;
-    margin: 0 210px;
-  }
-
-  #sidebar {
-    background-color: #32a4e7;
-    color: #ffffff;
-    padding: 10px;
-    width: 180px;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    position: absolute;
-  }
-
-  #bottom {
-    border: 1px solid #d4d4d4;
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px;
-    font-size: 70%;
-    line-height: 14px;
-  }
-
-  #top h1, #top p, #menulist {
-    margin: 0;
-    padding: 0;
-  }
-
-  .menuitem {
-    background-color: #f1f1f1;
-    border: 1px solid #d4d4d4;
-    list-style-type: none;
-    padding: 2px;
-    cursor: not-allowed; /* 클릭 비활성 표현 */
-    user-select: none;
-  }
-
-  .menuitem:hover { background-color: #ffffff; }
-
-  .menuitem:first-child {
-    background-color: #04AA6D;
-    color: white;
-    font-weight: bold;
-  }
-
-  a { color: #000000; text-decoration: underline; pointer-events: none; }
-  a:hover { text-decoration: none; }
-
-  /* 본문 리스트/카드 스타일 (간단) */
-  .list { padding-left: 18px; }
-  .list li { margin-bottom: 6px; }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    gap: 8px 16px;
-    padding-left: 0;
-    list-style: none;
-  }
-  .cards li {
-    border: 1px solid #d4d4d4;
-    border-radius: 6px;
-    padding: 8px 10px;
-    background: #fff;
-  }
-
-  .desc { color: #444; font-size: 90%; }
-  .bulletless { list-style: none; padding-left: 0; }
-  .tag {
-    display: inline-block;
-    background: rgba(255,255,255,0.25);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 10px;
-    font-size: 85%;
-  }
-
-  .nolink { text-decoration: none; cursor: default; }
-</style>
 
 </html>
