@@ -1,0 +1,40 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <div
+      id="div_test"
+      onclick="alert('clicked!')"
+      style="background-color: antiquewhite; height: 200px;"
+      onmouseover="console.log('mouse in...'); listener_mouseover()"
+      onmouseout="listener_mouseout()"
+    >
+    123123
+    </div>
+
+    <script>
+      function listener_mouseover() {
+        let div_test = document.getElementById("div_test");
+        div_test.style = "background-color: yellow";
+        // div_test.innerHTML = <img />
+      }
+
+      function listener_mouseout() {
+        let div_test = document.getElementById("div_test");
+        div_test.innerText = "abacbac";
+        div_test.style = "background-color: antiquewhite; height: 200px;";
+      }
+
+      function add() {
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+        
+        let sum = Number(num1.value) + parseInt(num2.value);
+
+        let result = document.getElementById("result");
+        result.value = sum;
+      }
+    </script>
+  </body>
+</html>

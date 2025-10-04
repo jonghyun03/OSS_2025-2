@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head></head>
+
+<body>
+  <h2>HTML Forms</h2>
+  <div>사용자 정보 입력</div> <br />
+  <!-- action: 정보를 제출할 URL / methor: 폼 데이터를 전송하는 방식 -->
+  <form action="form_ok.html" method="GET">
+    <label for="input_name">이름: </label> <br />
+    <input type="text" name="name" id="input_name" placeholder="이름을 입력" /> <br />
+    <!-- placeholder: 입력 전 가이드 문구 -->
+    <label for="input_email">이메일: </label> <br />
+    <input type="text" name="name" id="input_email" /> <br /> <br />
+
+    <fieldset>
+      <legend>라벨 같은거</legend>
+      <label for="input_phone">전화번호: </label> <br />
+      <input type="text" name="phone" id="input_phone" /> <br />
+      <label for="input_address">주소: </label> <br />
+      <input type="text" name="address" id="input_address" required /> <br />
+    </fieldset>
+
+    <div>
+      <label for="input_text">TEXT: </label>
+      <input type="text" id="input_text" name="text" readonly />
+      <style>
+        input[type="text"]:read-only {
+          background-color: aqua;
+        }
+      </style>
+    </div>
+    <div>
+      <label for="input_password">PASSWORD: </label>
+      <input type="password" id="input_password" name="password" autofocus />
+    </div>
+    <div>
+      <label for="input_email">EMAIL: </label>
+      <input type="email" id="input_email" name="email" />
+    </div>
+    <div>
+      <label for="input_number">NUMBER: </label>
+      <input type="number" id="input_number" name="number" />
+    </div>
+    <div>
+      <label for="input_date">DATE: </label>
+      <input type="date" id="input_date" name="date" />
+    </div>
+    <div>
+      <label for="input_time">TIME: </label>
+      <input type="time" id="input_time" name="time" />
+    </div>
+    <div>
+      <label for="input_hidden">HIDDEN: </label>
+      <input type="hidden" id="input_hidden" name="hidden" />
+      <input type="text" id="input_hidden_1" name="hidden1" />
+    </div>
+
+    <div>
+      <label for="input_radio1">여: </label>
+      <input type="radio" id="input_radio1" name="radio" />
+    </div>
+    <div>
+      <label for="input_radio2">남: </label>
+      <input type="radio" id="input_radio2" name="radio" />
+    </div>
+    <div>
+      <label for="input_radio3">선택안함: </label>
+      <input type="radio" id="input_radio3" name="radio" />
+    </div>
+
+    <div>
+      <label for="input_checkbox1">축구: </label>
+      <input type="checkbox" id="input_checkbox1" name="checkbox1" />
+      <label for="input_checkbox2">농구: </label>
+      <input type="checkbox" id="input_checkbox2" name="checkbox2" />
+      <label for="input_checkbox3">배구: </label>
+      <input type="checkbox" id="input_checkbox3" name="checkbox3" />
+    </div>
+
+    <div>
+      <label for="input_file">FILE: </label>
+      <input type="file" id="input_file" name="file" />
+    </div>
+
+    <select name="city" id="city">
+      <option value="1">강남구</option>
+      <option value="2">서초구</option>
+      <option value="3" selected>송파구</option>
+    </select>
+    <br />
+
+    지역선택:
+    <!-- <select name="city" id="city" multiple></select> -->
+    <select name="city" id="city">
+      <optgroup label="경상도">
+        <option value="1">포항시</option>
+        <option value="1">경주시</option>
+        <option value="1">경산시</option>
+      </optgroup>
+      <optgroup label="경기도">
+        <option value="11">파주시</option>
+        <option value="12">성남시</option>
+        <option value="13">용인시</option>
+      </optgroup>
+    </select>
+    <br />
+
+    <div>
+      <input list="fruitlist" name="fruits" id="fruits">
+      <datalist id="fruitlist">
+        <option value="apple">사과</option>
+        <option value="banana">바나나</option>
+        <option value="peach">복숭아</option>
+        <option value="orange" label="오렌지">오렌지</option>
+      </datalist>
+    </div>
+
+    <div>
+      <label for="textarea1">TEXTAREA: </label>
+      <textarea name="content" cols="40" rows="5"></textarea>
+    </div>
+    <div>
+      <label for="input_color">COLOR: </label>
+      <input name="input_color" type="color"></input>
+    </div>
+
+    <input type="submit" value="제출" /> <input type="reset" value="최소" />
+  </form>
+</body>
+
+</html>

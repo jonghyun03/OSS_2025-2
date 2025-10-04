@@ -1,0 +1,46 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <script>
+      const test3 = 0;
+
+      let sum = 0;
+      // for(let i=0; i<=50; i++){
+      //   sum += i;
+      // }
+      // let result = sum;
+      // console.log("sum: ", result);
+
+      // setTimeout(function(){alert("3 seconds?")}, 3000)
+      // setInterval(function(){console.log(sum++);}, 500)
+      // let result = confirm("Yes? NO?");
+      // alert(result);
+
+      // let result2 = prompt("햄버거 전사에게 한마디:", "예) 그만좀 먹어라");
+      // alert(result2);
+
+      let innerwidth = window.innerWidth;
+      let outerwidth = window.outerWidth;
+
+      console.log("inner: ", innerwidth);
+      console.log("outer: ", outerwidth);
+
+      // window.location.href = "https://www.naver.com";
+
+      let obj = {
+        phone: "01012341234",
+        address: "HGU",
+        favorite: "FIVE GUYS",
+        array: [{a: "b"}, {a: "c"},],
+        test1 : function(){console.log(1)},
+      };
+      obj.name = "name!!";
+      // alert(obj.name);
+      obj["title"] = "title!!";
+      alert(obj["array"][0]["a"]);
+      obj["test1"]();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week5 Thursday</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <style>
+    .div_panel {
+      font-size: 500px;
+      text-align: center;
+      height: 600px;
+    }
+
+    .div_panel.O {
+      background-color: aquamarine;
+    }
+
+    .div_panel.X {
+      background-color: palevioletred;
+    }
+
+    .div_player {
+      position: fixed;
+      left: calc(50% + 25px);
+      top: 50px;
+      /* transform: translateX(-50%); */
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 15px;
+      background-color: yellow;
+      border-radius: 50%;
+      transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+  <body>
+    id : <input type="text" id="input_id" readonly> stdnum : <input type="text" id="input_stdnum"> <button onclick="listener_stdnum_register()">IN</button> <button onclick="startAutoRefresh()">GO</button> <button onclick="stopAutoRefresh()">STOP</button>
+    <div class="div_player_container">
+      <!-- <div class="div_player hide" id="div_player_me">Player<br/><span id="span_stdnum_me">-</span></div> -->
+    </div>
+    <div class="container">
+      <table style="width: 100%;">
+        <tr>
+          <td><div class="div_panel O" onclick="listener_panel_clicked('O')">O</div></td>
+          <td><div class="div_panel X" onclick="listener_panel_clicked('X')">X</div></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      let registered = false;
+      let currentPlayerId = null;
+      let playerCount = 0; // 플레이어 순차 번호
+      let refreshInterval = null; // 자동 새로고침 인터벌
+
+      function listener_player_add(playerNumber, panel = null, isInitial = false) { // 기능: 플레이어 추가
+        // 해당 번호의 플레이어가 이미 있는지 확인
+        if ($('#div_player_' + playerNumber).length > 0) {
+          return; // 이미 존재하면 추가하지 않음
+        }
+        
+        // 패널이 지정되지 않았으면 랜덤하게 선택
+        if (!panel) {
+          panel = Math.random() < 0.5 ? 'O' : 'X';
+        }
+        
+        // 새 플레이어 추가
+        $(".div_player_container").append(
+          `<div class="div_player" id="div_player_${playerNumber}" data-panel="${panel}">Player<br/><span id="span_player_${playerNumber}">#${playerNumber}</span></div>`
+        );
+        
+        // 처음 생성될 때는 화면 제일 위에, 그 외에는 랜덤한 위치에 배치
+        if (isInitial) {
+          $('#div_player_' + playerNumber).css('left', 'calc(50% + 25px)');
+          $('#div_player_' + playerNumber).css('top', '50px');
+        } else {
+          setRandomPosition(playerNumber, panel);
+        }
+        
+        currentPlayerId = playerNumber;
+      }
+      
+      function setRandomPosition(playerNumber, panel) {
+        let playerElement = $('#div_player_' + playerNumber);
+        
+        if (panel === 'O') {
+          // O 패널 위의 랜덤한 위치 (25% 지점 기준)
+          let randomOffsetX = Math.random() * 200 - 100; // -100px ~ +100px
+          let randomOffsetY = Math.random() * 400; // 0px ~ 400px (상하, 최소 50px부터 시작)
+          playerElement.css('left', `calc(25% + 25px + ${randomOffsetX}px)`);
+          playerElement.css('top', `${50 + randomOffsetY}px`);
+        } else {
+          // X 패널 위의 랜덤한 위치 (75% 지점 기준)
+          let randomOffsetX = Math.random() * 200 - 100; // -100px ~ +100px
+          let randomOffsetY = Math.random() * 400; // 0px ~ 400px (상하, 최소 50px부터 시작)
+          playerElement.css('left', `calc(75% + 25px + ${randomOffsetX}px)`);
+          playerElement.css('top', `${50 + randomOffsetY}px`);
+        }
+      }
+      
+      function listener_stdnum_register() { // 기능: 학번 등록
+        if($('#input_stdnum').val() === '') {
+          alert('stdnum을 입력해주세요.');
+          return;
+        }
+        
+        let input_stdnum = $('#input_stdnum').val();
+        
+        // 이미 등록된 학번인지 확인 (모든 플레이어의 span에서 학번 확인)
+        let isDuplicate = false;
+        $('.div_player span').each(function() {
+          // span의 텍스트에서 학번 추출 (실제로는 백엔드에서 관리)
+          // 여기서는 간단히 학번 입력값으로만 체크
+        });
+        
+        // 실제로는 백엔드 API에서 중복 체크를 해야 하지만, 
+        // 현재는 프론트엔드에서만 처리
+        if (isDuplicate) {
+          alert('이미 등록된 학번입니다.');
+          return;
+        }
+        
+        registered = true;
+        
+        // 플레이어 번호 증가
+        playerCount++;
+        
+        // ID 입력 필드에 플레이어 번호 설정
+        $('#input_id').val(playerCount);
+        
+        // 랜덤하게 패널 선택
+        let randomPanel = Math.random() < 0.5 ? 'O' : 'X';
+        
+        // 플레이어 추가 (순차 번호로, 랜덤 패널, 처음 생성이므로 중앙에 배치)
+        listener_player_add(playerCount, randomPanel, true);
+        
+        // API로 플레이어 추가 (학번과 패널 정보 저장)
+        add_player(input_stdnum, randomPanel);
+        
+        // 학번 입력 필드 초기화
+        $('#input_stdnum').val('');
+      }
+
+      function listener_player_moved(obj_way, id) { // 기능: 플레이어 이동
+        // 플레이어가 존재하는지 확인
+        let playerElement = $('#div_player_'+id);
+        if (playerElement.length === 0) {
+          console.log('플레이어를 찾을 수 없습니다:', id);
+          return;
+        }
+        
+        // 패널 정보 업데이트
+        playerElement.attr('data-panel', obj_way);
+        
+        // 랜덤한 위치로 이동
+        setRandomPosition(id, obj_way);
+      }
+
+      function listener_panel_clicked(obj_way, id) { // 기능: 패널 클릭 시 플레이어 이동
+        if (!registered) {
+          alert('먼저 학번을 등록해주세요.');
+          return;
+        }
+        
+        let playerId = id || currentPlayerId;
+        if (playerId) {
+          listener_player_moved(obj_way, playerId);
+        }
+      }
+    </script>
+    <script>
+      function get_list(){
+        $.ajax({
+          url: "https://68dde707d7b591b4b78dd5aa.mockapi.io/api/oxgame/player",
+          method: "GET",
+          success: function(response){
+            console.log('플레이어 목록:', response);
+            
+            // 플레이어 카운트 초기화
+            playerCount = 0;
+            
+            // 기존 플레이어들을 순차 번호로 화면에 표시
+            response.forEach(function(player, index) {
+              if (player.stdnum) {
+                playerCount++;
+                let panel = player.panel || (Math.random() < 0.5 ? 'O' : 'X'); // 저장된 패널 정보 또는 랜덤
+                
+                // 이미 존재하는 플레이어인지 확인
+                let existingPlayer = $(`#div_player_${playerCount}`);
+                if (existingPlayer.length > 0) {
+                  // 기존 플레이어는 패널 정보만 업데이트하고 랜덤 위치로 부드럽게 이동
+                  existingPlayer.attr('data-panel', panel);
+                  setRandomPosition(playerCount, panel);
+                } else {
+                  // 새 플레이어만 추가
+                  $(".div_player_container").append(
+                    `<div class="div_player" id="div_player_${playerCount}" data-panel="${panel}">Player<br/><span id="span_player_${playerCount}">#${playerCount}</span></div>`
+                  );
+                  // 새 플레이어는 중앙에 배치
+                  $(`#div_player_${playerCount}`).css('left', 'calc(50% + 25px)');
+                  $(`#div_player_${playerCount}`).css('top', '50px');
+                }
+              }
+            });
+            
+            // 더 이상 존재하지 않는 플레이어들 제거
+            $('.div_player').each(function() {
+              let playerId = $(this).attr('id').replace('div_player_', '');
+              if (parseInt(playerId) > playerCount) {
+                $(this).remove();
+              }
+            });
+          },
+          error: function(error){
+            console.log('플레이어 목록 로드 실패:', error);
+          }
+        })
+      }
+
+      function add_player(stdnum, panel) {
+        $.ajax({
+          url: "https://68dde707d7b591b4b78dd5aa.mockapi.io/api/oxgame/player",
+          method: "POST",
+          data: { 
+            stdnum: stdnum,
+            panel: panel 
+          },
+          success: function(response){
+            console.log('플레이어 추가 성공:', response);
+            // API 성공 시에는 이미 화면에 추가되어 있으므로 중복 추가하지 않음
+          },
+          error: function(error){
+            console.log('플레이어 추가 실패:', error);
+            alert('플레이어 등록에 실패했습니다.');
+            // 실패 시 화면에서도 제거하고 카운트 감소
+            $('#div_player_' + playerCount).remove();
+            playerCount--;
+          }
+        })
+      }
+
+      // GO 버튼: 1초마다 get_list() 호출
+      function startAutoRefresh() {
+        if (refreshInterval) {
+          clearInterval(refreshInterval); // 기존 인터벌이 있으면 제거
+        }
+        refreshInterval = setInterval(function() {
+          get_list();
+        }, 1000); // 1초마다 실행
+        console.log('자동 새로고침 시작');
+      }
+
+      // STOP 버튼: 인터벌 중지
+      function stopAutoRefresh() {
+        if (refreshInterval) {
+          clearInterval(refreshInterval);
+          refreshInterval = null;
+          console.log('자동 새로고침 중지');
+        }
+      }
+
+      // 페이지 로드 시 플레이어 목록 가져오기
+      $(document).ready(function() {
+        get_list();
+      });
+    </script>
+  </body>
+</html>

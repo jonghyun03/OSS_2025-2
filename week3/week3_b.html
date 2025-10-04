@@ -1,0 +1,28 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <h4>덧셈 계산기</h4>
+    <form>
+      <input type="text" size="2" name="num1" id="num1" pattern="\d*" autofocus> +
+      <input type="text" size="2" name="num2" id="num2" pattern="\d*">
+      <button onclick="add()" type="button"> = </button>
+      <input type="text" size="2" name="result" id="result" readonly>
+      <br><br>
+      <input type="reset" value="초기화">
+    </form>
+
+    <script>
+      function add() {
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+        
+        let sum = Number(num1.value) + parseInt(num2.value);
+
+        let result = document.getElementById("result");
+        result.value = sum;
+      }
+    </script>
+  </body>
+</html>
