@@ -1,7 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/hw1/index.html" },
-    { "source": "/hw2", "destination": "/hw2/index.html" },
-    { "source": "/hw2/", "destination": "/hw2/index.html" }
+  "redirects": [
+    { "source": "/", "destination": "/hw1/", "permanent": false }
   ]
 }
