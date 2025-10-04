@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/public/hw1/index.html"
+      "destination": "/hw1/index.html"
     },
     {
       "source": "/hw2",
-      "destination": "/public/hw2/index.html"
+      "destination": "/hw2/index.html"
     }
   ]
 }
