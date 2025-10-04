@@ -3,6 +3,10 @@
     {
       "source": "/",
       "destination": "/hw1/index.html"
+    },
+    {
+      "source": "/hw2",
+      "destination": "/hw2/index.html"
     }
   ]
 }
